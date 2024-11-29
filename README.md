@@ -49,3 +49,25 @@
 #### 1FN: Ogni cella contiene un singolo valore atomico e non ci sono gruppi di valori ripetuti.
 #### 2FN: Tutti gli attributi non chiave dipendono dalla chiave primaria intera.
 #### 3FN: Non ci sono dipendenze funzionali transitive.
+
+### In che forma è?
+#### In 2 FN. Perchè? Basta leggere sotto!
+
+|Nome |Eta |Data di nascita |
+|------------ |------------ |------------ |
+|Alessio |36 |10-05-1988 |
+|Luca |38 |08-10-1986 |
+|Andrea |38 |02-10-1986 |
+|Vito |41 |02-10-1983 |
+
+#### 1 FN?
+#### Condizione: Ogni cella deve contenere un singolo valore atomico.
+#### Nel tuo caso: Se ogni riga rappresenta una persona unica e i valori nelle celle sono singoli (cioè, non hai liste di nomi o date multiple in una stessa cella), allora la tua tabella è in 1FN.
+
+#### 2 FN?
+#### Condizione: La tabella deve essere in 1FN e ogni attributo non chiave deve dipendere da tutta la chiave primaria.
+#### Nel tuo caso: Se la chiave primaria è composta da "Nome" e "Cognome" (o da un ID unico), e l'età e la data di nascita dipendono da entrambi, allora la tabella è in 2FN.
+
+#### 3 FN?
+#### Condizione: La tabella deve essere in 2FN e non ci devono essere dipendenze funzionali transitive.
+#### Nel tuo caso: L'età è calcolabile dalla data di nascita. Se la data di nascita è parte della chiave primaria, allora la tabella non è in 3FN, poiché l'età dipende transitivamente dalla chiave primaria attraverso la data di nascita.
