@@ -20,3 +20,32 @@
 #### Facilità le query: Permette di estrarre i dati in modo più efficiente e preciso.
 
 #### Migliora la manutenibilità: Rende il database più facile da modificare e aggiornare.
+
+### In che forma é?
+#### Sarà in 2FN ? Credo di si!
+
+|Nome |Eta |
+|------------ |------------ |
+|Alessio |20 |
+|Andrea |40 |
+|Vito |35 |
+|Gloria |62 |
+
+#### 1 FN?
+#### Se ogni riga rappresenta una persona unica: ovvero, ogni nome è associato a una sola età, allora la tabella è in 1FN. Questa è la forma normale più basilare e richiede che ogni cella contenga un singolo valore atomico.
+
+#### Se ci sono nomi duplicati con età diverse: la tabella non è in 1FN perché una cella (il nome) contiene più informazioni. In questo caso, sarebbe necessario aggiungere una colonna identificativa unica per ogni persona
+
+#### 2 FN?
+
+#### Se l'età dipende completamente dal nome: ovvero, ogni nome ha un'età associata e non ci sono altri attributi che dipendono solo da una parte della chiave (in questo caso, il nome), allora la tabella è anche in 2FN.
+
+#### Se ci sono altri attributi che dipendono solo da una parte della chiave: ad esempio, se hai una colonna "Città di nascita" e la città dipende solo dal cognome (che fa parte del nome completo), allora la tabella non è in 2FN. Dovresti creare una tabella separata per le città di nascita.
+
+### Regola della Terza Forma Normale?
+#### Se non ci sono dipendenze funzionali transitive: ovvero, se non ci sono attributi che dipendono da altri attributi non chiave, allora la tabella è in 3FN.
+
+#### Sintesi
+#### 1FN: Ogni cella contiene un singolo valore atomico e non ci sono gruppi di valori ripetuti.
+#### 2FN: Tutti gli attributi non chiave dipendono dalla chiave primaria intera.
+#### 3FN: Non ci sono dipendenze funzionali transitive.
